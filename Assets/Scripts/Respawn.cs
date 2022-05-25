@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
-    public Transform respawnPoint;
+    public GameObject respawnPoint;
+    public GameObject player;
 
-     void OnCollisionEnter(Collision other)
-    {
-        if (other.transform.CompareTag("Player"))
+     private void OnCollisionEnter(Collision other) {
+         
+         if (other.gameObject.tag == "Player")
         {
-            other.transform.position = respawnPoint.position;
-        }   
-    }
+            Debug.Log("hueta");
+            player.transform.position = respawnPoint.transform.position;
+        }  
+     }
+     private void OnCollisionStay(Collision other) {
+         if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("hueta");
+            player.transform.position = respawnPoint.transform.position;
+        }  
+     }
 }
