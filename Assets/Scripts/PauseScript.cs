@@ -8,19 +8,19 @@ public class PauseScript : MonoBehaviour
     public GameObject pauseMenuUI;
     public bool Pause;
     public GameObject FollowCamera;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause = !Pause;
-        }
-        if (Pause)
-        {
-            ActivateMenu();
-        }
-        else
-        {
-            DeactivateMenu();
+
+            // Должно быть здесь, иначе паузу из другого места поставить нельзя
+            if (Pause) {
+                ActivateMenu();
+            } else {
+                DeactivateMenu();
+            }
         }
 
     }
@@ -33,6 +33,7 @@ public class PauseScript : MonoBehaviour
         FollowCamera.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
     }
+
     public void DeactivateMenu()
     {
         pauseMenuUI.SetActive(false);
@@ -43,12 +44,10 @@ public class PauseScript : MonoBehaviour
         FollowCamera.SetActive(true);
     }
 
-
     public void LoadMenu()
     {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
     }
-        
     
 }
