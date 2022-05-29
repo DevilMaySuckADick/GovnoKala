@@ -192,7 +192,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(m_currentDirection);
             transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
 
-            m_animator.SetFloat("MoveSpeed", direction.magnitude);
+            m_animator.SetFloat("MotionSpeed", direction.magnitude);
         }
 
         JumpingAndLanding();
@@ -210,7 +210,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
         if (!m_wasGrounded && m_isGrounded)
         {
-            m_animator.SetTrigger("Land");
+            m_animator.SetTrigger("Grounded");
         }
 
         if (!m_isGrounded && m_wasGrounded)
