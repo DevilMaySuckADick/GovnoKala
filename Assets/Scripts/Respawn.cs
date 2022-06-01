@@ -35,12 +35,18 @@ public class Respawn : MonoBehaviour
     }
 
     public void RestartScene() {
-        // RespawnMenu.SetActive(false);
+        
         SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex );
         RespawnMenu.SetActive(false);
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         FollowCamera.SetActive(true);
+    }
+
+    public void LoadMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
     }
 }

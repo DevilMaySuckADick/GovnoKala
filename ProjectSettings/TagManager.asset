@@ -7,6 +7,8 @@ TagManager:
   - CinemachineTarget
   - Death
   - Killing
+  - ScoreCanvas
+  - babki
   layers:
   - Default
   - TransparentFX
