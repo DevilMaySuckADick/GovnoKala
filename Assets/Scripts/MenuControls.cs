@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Используется для смены сцен
 public class MenuControls : MonoBehaviour
 {
-    public void PlayPressed(string NameScene)
+    public void LoadGame()
     {
-        SceneManager.LoadScene(NameScene);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("SampleScene");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void ExitPressed()
+    public void Exit()
     {
         Application.Quit();
+    }
+
+    public void LoadMainMenu() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
     }
 }

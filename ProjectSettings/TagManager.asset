@@ -9,6 +9,7 @@ TagManager:
   - Killing
   - ScoreCanvas
   - babki
+  - coin
   layers:
   - Default
   - TransparentFX

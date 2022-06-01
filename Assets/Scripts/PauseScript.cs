@@ -5,49 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
-    public GameObject pauseMenuUI;
-    public bool Pause;
-    public GameObject FollowCamera;
+    public MenuOpenerScript MenuOpener;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Pause = !Pause;
-
-            // Должно быть здесь, иначе паузу из другого места поставить нельзя
-            if (Pause) {
-                ActivateMenu();
-            } else {
-                DeactivateMenu();
-            }
+    // Включает и выключает меню нажатием клавиши ESC
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            MenuOpener.ToggleMenu();
         }
-
     }
-
-    void ActivateMenu()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0;
-        Cursor.visible = true;
-        FollowCamera.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void DeactivateMenu()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Pause = false;
-        FollowCamera.SetActive(true);
-    }
-
-    public void LoadMenu()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
-    }
-    
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -497,7 +497,6 @@ GameObject:
   - component: {fileID: 1699084743}
   - component: {fileID: 1699084742}
   - component: {fileID: 1699084741}
-  - component: {fileID: 1699084744}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -570,18 +569,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1699084744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699084740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71893377556a3874aa14cefd31ebba7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1739421669
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,16 +745,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1699084744}
+      - m_Target: {fileID: 2026764432}
         m_TargetAssemblyTypeName: MenuControls, Assembly-CSharp
-        m_MethodName: ExitPressed
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SampleScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1913978385
@@ -891,10 +878,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1699084744}
+      - m_Target: {fileID: 2026764432}
         m_TargetAssemblyTypeName: MenuControls, Assembly-CSharp
-        m_MethodName: PlayPressed
-        m_Mode: 5
+        m_MethodName: LoadGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1031,6 +1018,7 @@ GameObject:
   - component: {fileID: 2026764431}
   - component: {fileID: 2026764430}
   - component: {fileID: 2026764429}
+  - component: {fileID: 2026764432}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1086,3 +1074,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026764432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026764428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71893377556a3874aa14cefd31ebba7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
