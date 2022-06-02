@@ -5,17 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Respawn : MonoBehaviour
 {
-    public MenuOpenerScript RespawnMenuOpener;
+    public MenuChanger MenuChanger;
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Killing") {
-            RespawnMenuOpener.OpenMenu();
-        }
-    }
-
-    private void OnTriggerStay(Collider other) {
-        if (other.gameObject.tag == "Killing") {
-            RespawnMenuOpener.OpenMenu();
+            MenuChanger.ChangeActiveMenu(MenuState.Restart);
         }
     }
 }

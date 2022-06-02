@@ -7,7 +7,7 @@ public class ScoreScript : MonoBehaviour
 {
     public int points = 0;
     public AudioClip coinSound;
-    public MenuOpenerScript MenuOpener;
+    public MenuChanger MenuChanger;
     public ThirdPersonController CharacterController;
     public Animator CharacterAnimator;
 
@@ -24,7 +24,7 @@ public class ScoreScript : MonoBehaviour
             points++;
             AudioSource.PlayClipAtPoint(coinSound, transform.position, 3f);
             Destroy(other.gameObject);
-            MenuOpener.OpenMenu();
+            MenuChanger.ChangeActiveMenu(MenuState.GameOver);
             IsGameOver = true;
             CharacterController.enabled = false;
         }

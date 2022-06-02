@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
-    public MenuOpenerScript MenuOpener;
+    public MenuChanger MenuChanger;
 
     // Включает и выключает меню нажатием клавиши ESC
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            MenuOpener.ToggleMenu();
+            MenuChanger.ChangeActiveMenu(MenuState.Pause);
         }
     }
 }
